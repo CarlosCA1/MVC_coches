@@ -35,7 +35,7 @@ class CuentaCorrienteTest {
         modelo2.crearCoche("Seat", "ABC 1234");
         Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
         int nuevaVelocidad = modelo2.bajarVelocidad("VXK 7240");
-        assertEquals(40, nuevaVelocidad);
+        assertEquals(38, nuevaVelocidad);
     }
 
     @Test

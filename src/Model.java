@@ -42,13 +42,23 @@ public class Model {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad + 1;
 
-        // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
+        //Si el valor es nulo, retorna -1
+        if(getCoche(matricula).velocidad==null){
+            return -1;
+        } else {
+            // retorna la nueva velocidad
+            return getCoche(matricula).velocidad;
+        }
     }
 
     public int bajarVelocidad(String matricula) {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad - 1;
+
+        //Si el valor es nulo, retorna -1
+        if (getCoche(matricula).velocidad==null){
+            return -1;
+        }
 
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
