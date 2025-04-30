@@ -26,7 +26,7 @@ public class Model {
      * @param matricula a buscar
      * @return chche o null si no existe
      */
-    public Coche getCoche(String matricula) {
+    public static Coche getCoche(String matricula) {
         Coche aux = null;
         // recorre el array buscando por matricula
         for (Coche e : parking) {
@@ -38,7 +38,7 @@ public class Model {
     }
 
 
-    public int subirVelocidad(String matricula) {
+    public static int subirVelocidad(String matricula) {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad + 1;
 
@@ -51,7 +51,7 @@ public class Model {
         }
     }
 
-    public int bajarVelocidad(String matricula) {
+    public static int bajarVelocidad(String matricula) {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad - 1;
 
@@ -70,7 +70,7 @@ public class Model {
      * @param matricula
      * @return
      */
-    public int getVelocidad(String matricula) {
+    public static int getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
 }
