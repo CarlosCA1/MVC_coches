@@ -41,8 +41,7 @@ class CuentaCorrienteTest {
     @Test
     @DisplayName("Crear coche")
     void crearCoche() {
-        Model modelo2 = new Model();
-        Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
+        Coche coche = Model.crearCoche("Seat", "ABC 1234");
         assertNotNull(coche);
         assertEquals("Seat", coche.modelo);
         assertEquals("ABC 1234", coche.matricula);
