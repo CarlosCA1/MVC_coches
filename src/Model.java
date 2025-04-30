@@ -14,7 +14,7 @@ public class Model {
      * @return el coche creado
      */
 
-    public Coche crearCoche(String modelo, String matricula) {
+    public static Coche crearCoche(String modelo, String matricula) {
         Coche aux = new Coche(modelo, matricula);
         parking.add(aux);
         return aux;
