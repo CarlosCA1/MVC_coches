@@ -24,7 +24,7 @@ public class Model {
      * Busca coche segun matricula
      *
      * @param matricula a buscar
-     * @return chche o null si no existe
+     * @return coche o null si no existe
      */
     public static Coche getCoche(String matricula) {
         Coche aux = null;
@@ -38,6 +38,11 @@ public class Model {
     }
 
 
+    /**
+     * Sube la velocidad 1 km/h
+     * @param matricula
+     * @return nueva velocidad
+     */
     public static int subirVelocidad(String matricula) {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad + 1;
@@ -51,6 +56,11 @@ public class Model {
         }
     }
 
+    /**
+     * Baja la velocidad 1 km/h
+     * @param matricula
+     * @return nueva velocidad
+     */
     public static int bajarVelocidad(String matricula) {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad - 1;
@@ -68,7 +78,7 @@ public class Model {
     /**
      * Ddevuelve la velocidad segun la matricula
      * @param matricula
-     * @return
+     * @return velocidad
      */
     public static int getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
