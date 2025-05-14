@@ -30,7 +30,7 @@ public class View {
                 case 1:
                     String modelo = "Seat";
                     nuevoCoche = Controller.crearCoche(modelo, matricula);
-                    System.out.println("Creado coche de modelo " + nuevoCoche.modelo + " y matrícula " + nuevoCoche.matricula);
+                    System.out.println("Coche creado");
                     break;
 
                 case 2:
