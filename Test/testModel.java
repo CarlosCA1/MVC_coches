@@ -23,8 +23,7 @@ class CuentaCorrienteTest {
     void subirVelocidad() {
         Model modelo2 = new Model();
         modelo2.crearCoche("Seat", "ABC 1234");
-        Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
-        int nuevaVelocidad = modelo2.subirVelocidad("VXK 7240");
+        int nuevaVelocidad = modelo2.subirVelocidad("ABC 1234");
         assertEquals(40, nuevaVelocidad);
     }
 
@@ -33,10 +32,10 @@ class CuentaCorrienteTest {
     void bajarVelocidad() {
         Model modelo2 = new Model();
         modelo2.crearCoche("Seat", "ABC 1234");
-        Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
-        int nuevaVelocidad = modelo2.bajarVelocidad("VXK 7240");
+        int nuevaVelocidad = modelo2.bajarVelocidad("ABC 1234");
         assertEquals(38, nuevaVelocidad);
     }
+
 
     @Test
     @DisplayName("Crear coche")

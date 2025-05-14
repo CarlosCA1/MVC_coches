@@ -22,7 +22,23 @@ public class Controller {
         } else {
             System.out.println("Error");
         }
+    }
 
-        //Todo static, clase app que llame a view.menu con crear coche, cambiar velocidad, mostrar velocidad salir, llamar a inicio, clase inicio (main)
+    public static Coche crearCoche(String modelo, String matricula) {
+        return Model.crearCoche(modelo, matricula);
+    }
+
+    public static int subirVelocidad(String matricula) {
+        Model.crearCoche("LaFerrari", "SBC 1234");
+        return Model.subirVelocidad(matricula);
+    }
+
+    public static int bajarVelocidad(String matricula) {
+        Model.crearCoche("Alpine", "HYU 4567");
+        return Model.bajarVelocidad(matricula);
+    }
+
+    public static Coche getCoche(String matricula) {
+        return Model.getCoche(matricula);
     }
 }
