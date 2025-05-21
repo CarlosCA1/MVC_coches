@@ -1,3 +1,4 @@
+//Los métodos llaman al model
 public class Controller {
 
     public static Coche crearCoche(String modelo, String matricula) {
