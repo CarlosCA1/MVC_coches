@@ -6,12 +6,14 @@ sequenceDiagram
 
     
     View->>Controller: crearCoche("Seat", "3455CXC")
+    activate View
+    activate Controller
     Controller->>Model: crearCoche("Seat", "3455CXC")
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    activate View
     Controller-->>View: Coche
+    deactivate Controller
     deactivate View
 
 ```
@@ -22,14 +24,15 @@ sequenceDiagram
     participant Controller
     participant View
 
-    
     View->>Controller: subirVelocidad("3455CXC")
+    activate View
+    activate Controller
     Controller->>Model: subirVelocidad("3455CXC")
     activate Model
     Model-->>Controller: Velocidad
     deactivate Model
-    activate View
     Controller-->>View: Velocidad
+    deactivate Controller
     deactivate View
-
+    
 ```
