@@ -82,10 +82,4 @@ public class View {
 
         } while (true); // Repite el menú hasta que se seleccione la opción 5 (salir)
     }
-
-    // Método auxiliar para mostrar la velocidad de un coche con su matrícula
-    public static boolean muestraVelocidad(String matricula, Integer v) {
-        System.out.println(matricula + ": " + v + " km/h");
-        return true; // Devuelve true siempre (se podría usar para confirmar que se imprimió)
-    }
 }
