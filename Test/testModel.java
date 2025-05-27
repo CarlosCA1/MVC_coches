@@ -1,11 +1,9 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CuentaCorrienteTest {
+class testModel {
 
     @Test
     @DisplayName("Get coche")
@@ -23,8 +21,7 @@ class CuentaCorrienteTest {
     void subirVelocidad() {
         Model modelo2 = new Model();
         modelo2.crearCoche("Seat", "ABC 1234");
-        Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
-        int nuevaVelocidad = modelo2.subirVelocidad("VXK 7240");
+        int nuevaVelocidad = modelo2.subirVelocidad("ABC 1234");
         assertEquals(40, nuevaVelocidad);
     }
 
@@ -33,16 +30,15 @@ class CuentaCorrienteTest {
     void bajarVelocidad() {
         Model modelo2 = new Model();
         modelo2.crearCoche("Seat", "ABC 1234");
-        Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
-        int nuevaVelocidad = modelo2.bajarVelocidad("VXK 7240");
+        int nuevaVelocidad = modelo2.bajarVelocidad("ABC 1234");
         assertEquals(38, nuevaVelocidad);
     }
+
 
     @Test
     @DisplayName("Crear coche")
     void crearCoche() {
-        Model modelo2 = new Model();
-        Coche coche = modelo2.crearCoche("Seat", "ABC 1234");
+        Coche coche = Model.crearCoche("Seat", "ABC 1234");
         assertNotNull(coche);
         assertEquals("Seat", coche.modelo);
         assertEquals("ABC 1234", coche.matricula);

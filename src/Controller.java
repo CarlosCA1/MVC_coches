@@ -1,28 +1,20 @@
-import java.lang.module.ModuleDescriptor;
-
+//Los métodos llaman al model
 public class Controller {
-    public static void main(String[] args) {
-        // Instanciamos la vista y el modelo
-        View miView = new View();
-        Model miModel = new Model();
 
-        // Crear tres coches
-        miModel.crearCoche("LaFerrari", "SBC 1234");
-        miModel.crearCoche("Alpine", "HYU 4567");
-        miModel.crearCoche("Aston Martin", "FGH 3333");
+    public static Coche crearCoche(String modelo, String matricula) {
+        return Model.crearCoche(modelo, matricula);
+    }
 
-        Coche ferrari = miModel.getCoche("SBC 1234");
-        // modifica la velocidad
-        int nuevaVelocidad = miModel.subirVelocidad("SBC 1234");
-        int nuevaVelocidad2 = miModel.bajarVelocidad("SBC 1234");
+    public static int subirVelocidad(String matricula) {
+        return Model.subirVelocidad(matricula);
+    }
 
-        // recoje la velocidad y la muestra (tarea de la View)
-        boolean hecho = miView.muestraVelocidad("SBC 1234", miModel.getVelocidad("SBC 1234"));
+    public static int bajarVelocidad(String matricula) {
+        Model.crearCoche("Alpine", "HYU 4567");
+        return Model.bajarVelocidad(matricula);
+    }
 
-        if (hecho) {
-            System.out.println("Correcto");
-        } else {
-            System.out.println("Error");
-        } ;
+    public static Coche getCoche(String matricula) {
+        return Model.getCoche(matricula);
     }
 }
