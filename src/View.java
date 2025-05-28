@@ -1,5 +1,12 @@
 import java.util.Scanner;
 
+
+/**
+ * Clase View que implementa la interfaz {@code Observador}.
+ * Se encarga de mostrar el menú de interacción al usuario y de recibir notificaciones
+ * cuando cambia el estado del modelo (patrón Observer).
+ */
+
 public class View {
 
     // Método estático que muestra el menú principal y gestiona la interacción con el usuario
@@ -83,3 +90,4 @@ public class View {
         } while (true); // Repite el menú hasta que se seleccione la opción 5 (salir)
     }
 }
+

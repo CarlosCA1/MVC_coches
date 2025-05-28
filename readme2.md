@@ -1,3 +1,5 @@
+## Diagrama de secuencia:
+
 ```mermaid
 sequenceDiagram
     participant Model
@@ -36,3 +38,39 @@ sequenceDiagram
     deactivate View
     
 ```
+
+---
+## Diagrama de clases:
+
+```mermaid
+classDiagram
+    class Coche {
+        String: matricula
+        String: modelo
+        Integer: velocidad
+    }
+      class Controller{
+          +crearCoche(String, String, String)
+          +getCoche(String)
+          +subirVelocidad(String)
+          +bajarVelocidad(String)
+          +getVelocidad(String)
+      }
+      class View {+menu()}
+      class Model {
+          ArrayList~Coche~: parking
+          +crearCoche(String, String, String)
+          +getCoche(String)
+          +subirVelocidad(String)
+          +bajarVelocidad(String)
+          +getVelocidad(String)
+      }
+    Controller "1" *-- "1" Model : association
+    Controller "1" *-- "1" View : association
+    Model "1" *-- "1..n" Coche : association
+      
+```
+
+---
+
+

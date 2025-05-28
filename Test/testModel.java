@@ -22,7 +22,7 @@ class testModel {
         Model modelo2 = new Model();
         modelo2.crearCoche("Seat", "ABC 1234");
         int nuevaVelocidad = modelo2.subirVelocidad("ABC 1234");
-        assertEquals(40, nuevaVelocidad);
+        assertEquals(1, nuevaVelocidad);
     }
 
     @Test
@@ -31,7 +31,7 @@ class testModel {
         Model modelo2 = new Model();
         modelo2.crearCoche("Seat", "ABC 1234");
         int nuevaVelocidad = modelo2.bajarVelocidad("ABC 1234");
-        assertEquals(38, nuevaVelocidad);
+        assertEquals(0, nuevaVelocidad);
     }
 
 

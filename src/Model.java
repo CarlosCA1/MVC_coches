@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Clase encargada de manejar los datos
  */
-public class Model {
+public class Model{
     static ArrayList<Coche> parking = new ArrayList<>();
 
     /**
@@ -44,16 +44,12 @@ public class Model {
      * @return nueva velocidad
      */
     public static int subirVelocidad(String matricula) {
-        // busca el coche
-        getCoche(matricula).velocidad = getCoche(matricula).velocidad + 1;
+        Coche coche = getCoche(matricula);
+        if (coche == null) return -1;
 
-        //Si el valor es nulo, retorna -1
-        if(getCoche(matricula).velocidad==null){
-            return -1;
-        } else {
-            // retorna la nueva velocidad
-            return getCoche(matricula).velocidad;
-        }
+        coche.velocidad = coche.velocidad + 1;
+        //notificarObservadoresEstatico(coche); // Notifica cambio
+        return coche.velocidad;
     }
 
     /**
@@ -62,16 +58,15 @@ public class Model {
      * @return nueva velocidad
      */
     public static int bajarVelocidad(String matricula) {
-        // busca el coche
-        getCoche(matricula).velocidad = getCoche(matricula).velocidad - 1;
+        Coche coche = getCoche(matricula);
+        if (coche == null) return -1;
 
-        //Si el valor es nulo, retorna -1
-        if (getCoche(matricula).velocidad==null){
-            return -1;
+        if (coche.velocidad > 0) {
+            coche.velocidad = coche.velocidad - 1;
+            //notificarObservadoresEstatico(coche); // Notifica solo si cambia
         }
 
-        // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
+        return coche.velocidad;
     }
 
 
