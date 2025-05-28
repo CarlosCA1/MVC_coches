@@ -78,4 +78,30 @@ public class Model{
     public static int getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
+
+    /**
+     * Devuelve la distancia
+     * @param matricula
+     * @return distancia
+     */
+    public static int avanzaCoche(String matricula) {
+        Coche coche = getCoche(matricula);
+        if (coche == null) return -1;
+
+        if (coche.distancia >= 0) {
+            coche.distancia = coche.distancia + 1;
+            coche.litrosGasolina = coche.litrosGasolina - 1;
+        }
+
+        return coche.distancia;
+    }
+
+    /**
+     * Obtiene los litros de gasolina
+     * @param matricula
+     * @return litros de gasolina
+     */
+    public static int getLitros(String matricula) {
+        return getCoche(matricula).litrosGasolina;
+    }
 }

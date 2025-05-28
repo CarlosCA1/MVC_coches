@@ -24,7 +24,9 @@ public class View {
             System.out.println("2: Subir velocidad");
             System.out.println("3: Bajar velocidad");
             System.out.println("4: Mostrar coche");
-            System.out.println("5: Salir");
+            System.out.println("5: Avanzar");
+            System.out.println("6: Mostrar litros de gasolina");
+            System.out.println("7: Salir");
             System.out.print("Elige una opción: ");
 
             // Validación de entrada: si el usuario no escribe un número
@@ -70,13 +72,29 @@ public class View {
                     // Opción 4: mostrar información del coche
                     Coche cocheMostrado = Controller.getCoche(matricula);
                     if (cocheMostrado != null) {
-                        System.out.println("Coche: " + cocheMostrado.modelo + ", Matrícula: " + cocheMostrado.matricula + ", Velocidad: " + cocheMostrado.velocidad + " km/h");
+                        System.out.println("Coche: " + cocheMostrado.modelo + ", Matrícula: " + cocheMostrado.matricula + ", Velocidad: " + cocheMostrado.velocidad + " km/h" + "Distancia: " + cocheMostrado.distancia + "km" + "Litros: " + cocheMostrado.litrosGasolina + "L");
                     } else {
                         System.out.println("No se encontró ningún coche");
                     }
                     break;
 
                 case 5:
+                    // avanzar
+                    if (Controller.getCoche(matricula) == null) {
+                        System.out.println("Primero debes crear el coche.");
+                        break;
+                    }
+                    int nuevaDistancia = Controller.avanzaCoche(matricula);
+                    System.out.println("Nueva distancia: " + nuevaDistancia + " km");
+                    break;
+
+                case 6:
+                    // mostrar litros
+                    int litrosRestantes = Controller.getLitros(matricula);
+                        System.out.println("Coche: " + litrosRestantes + "L");
+                    break;
+
+                case 7:
                     // Opción 5: salir del programa
                     System.out.println("¡Hasta luego!");
                     scanner.close(); // Cierra el Scanner para liberar recursos

@@ -45,4 +45,13 @@ public class Controller {
     public static Coche getCoche(String matricula) {
         return Model.getCoche(matricula);
     }
+
+    public static int avanzaCoche(String matricula) {
+        Model.crearCoche("Alpine", "HYU 4567");
+        return Model.avanzaCoche(matricula);
+    }
+
+    public static int getLitros(String matricula) {
+        return Model.getLitros(matricula);
+    }
 }
