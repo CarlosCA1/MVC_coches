@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 /**
  * Clase View que implementa la interfaz {@code Observador}.
  * Se encarga de mostrar el menú de interacción al usuario y de recibir notificaciones
@@ -26,7 +25,8 @@ public class View {
             System.out.println("4: Mostrar coche");
             System.out.println("5: Avanzar");
             System.out.println("6: Mostrar litros de gasolina");
-            System.out.println("7: Salir");
+            System.out.println("7: Poner gasolina");
+            System.out.println("8: Salir");
             System.out.print("Elige una opción: ");
 
             // Validación de entrada: si el usuario no escribe un número
@@ -91,10 +91,20 @@ public class View {
                 case 6:
                     // mostrar litros
                     int litrosRestantes = Controller.getLitros(matricula);
-                        System.out.println("Coche: " + litrosRestantes + "L");
+                    System.out.println("Coche: " + litrosRestantes + "L");
                     break;
 
                 case 7:
+                    // poner gasolina
+                    if (Controller.getCoche(matricula) == null) {
+                        System.out.println("Primero debes crear el coche.");
+                        break;
+                    }
+                    int litros = Controller.ponerGasolina(matricula);
+                    System.out.println("Se añadió 1 litro. Total ahora: " + litros + "L");
+                    break;
+
+                case 8:
                     // Opción 5: salir del programa
                     System.out.println("¡Hasta luego!");
                     scanner.close(); // Cierra el Scanner para liberar recursos
@@ -108,4 +118,3 @@ public class View {
         } while (true); // Repite el menú hasta que se seleccione la opción 5 (salir)
     }
 }
-

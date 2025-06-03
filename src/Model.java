@@ -37,7 +37,6 @@ public class Model{
         return aux;
     }
 
-
     /**
      * Sube la velocidad 1 km/h
      * @param matricula
@@ -68,7 +67,6 @@ public class Model{
 
         return coche.velocidad;
     }
-
 
     /**
      * Ddevuelve la velocidad segun la matricula
@@ -103,5 +101,17 @@ public class Model{
      */
     public static int getLitros(String matricula) {
         return getCoche(matricula).litrosGasolina;
+    }
+
+    /**
+     * Pone gasolina
+     * @param matricula
+     * @return litros de gasolina
+     */
+    public static int ponerGasolina(String matricula) {
+        Coche coche = getCoche(matricula);
+        if (coche == null) return -1;
+        coche.litrosGasolina = coche.litrosGasolina + 1;
+        return coche.litrosGasolina;
     }
 }

@@ -32,7 +32,6 @@ public class Controller {
      * @return Nueva velocidad del coche, o -1 si no se encuentra.
      */
     public static int bajarVelocidad(String matricula) {
-        Model.crearCoche("Alpine", "HYU 4567");
         return Model.bajarVelocidad(matricula);
     }
 
@@ -47,11 +46,14 @@ public class Controller {
     }
 
     public static int avanzaCoche(String matricula) {
-        Model.crearCoche("Alpine", "HYU 4567");
         return Model.avanzaCoche(matricula);
     }
 
     public static int getLitros(String matricula) {
         return Model.getLitros(matricula);
+    }
+
+    public static int ponerGasolina(String matricula) {
+        return Model.ponerGasolina(matricula);
     }
 }
