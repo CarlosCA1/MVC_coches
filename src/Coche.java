@@ -11,6 +11,6 @@ public class Coche {
         this.matricula = matricula;
         this.velocidad = 20; //determino una velocidad inicial
         this.distancia = 0;
-        this.litrosGasolina=30;
+        this.litrosGasolina=10;
     }
 }

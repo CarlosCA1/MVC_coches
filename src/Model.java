@@ -7,6 +7,14 @@ public class Model{
     static ArrayList<Coche> parking = new ArrayList<>();
 
     /**
+     * Notifica a los observadores cuando el estado del coche cambia.
+     * @param coche El coche cuyo estado ha cambiado.
+     */
+    public static void notifyObservers(Coche coche) {
+        ObserverGasolina.update(coche);
+    }
+
+    /**
      * Crea un coche y lo mete en el parking
      *
      * @param modelo    del coche
@@ -86,9 +94,11 @@ public class Model{
         Coche coche = getCoche(matricula);
         if (coche == null) return -1;
 
-        if (coche.distancia >= 0) {
+        if (coche.distancia >= 0 && coche.litrosGasolina > 0) {
             coche.distancia = coche.distancia + 1;
             coche.litrosGasolina = coche.litrosGasolina - 1;
+
+            notifyObservers(coche);
         }
 
         return coche.distancia;
@@ -112,6 +122,7 @@ public class Model{
         Coche coche = getCoche(matricula);
         if (coche == null) return -1;
         coche.litrosGasolina = coche.litrosGasolina + 1;
+        notifyObservers(coche);
         return coche.litrosGasolina;
     }
 }

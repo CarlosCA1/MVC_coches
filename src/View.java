@@ -117,4 +117,15 @@ public class View {
 
         } while (true); // Repite el menú hasta que se seleccione la opción 5 (salir)
     }
+    /**
+     * Muestra una alarma que avisa que es necesario repostar
+     * @param matricula
+     * @param l
+     *
+     */
+    public static boolean alarmaRepostar(String matricula, Integer l) {
+        System.out.println("[Alerta] Repostar: El coche de matrícula " + matricula +
+                " tiene solo " + l + " litros.");
+        return true;
+    }
 }
