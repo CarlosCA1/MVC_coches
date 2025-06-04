@@ -45,14 +45,32 @@ public class Controller {
         return Model.getCoche(matricula);
     }
 
+    /**
+     * Hace avanzar 1 km al coche.
+     *
+     * @param matricula Matrícula del coche.
+     * @return Nueva distancia
+     */
     public static int avanzaCoche(String matricula) {
         return Model.avanzaCoche(matricula);
     }
 
+    /**
+     * Muestra los litros de gasolina
+     *
+     * @param matricula Matrícula del coche.
+     * @return litros de gasolina
+     */
     public static int getLitros(String matricula) {
         return Model.getLitros(matricula);
     }
 
+    /**
+     * Pone gasolina (1L)
+     *
+     * @param matricula Matrícula del coche.
+     * @return nuevos litros de gasolina
+     */
     public static int ponerGasolina(String matricula) {
         return Model.ponerGasolina(matricula);
     }

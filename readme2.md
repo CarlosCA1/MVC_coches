@@ -45,6 +45,7 @@ sequenceDiagram
     
 ```
 
+
 ---
 ## Diagrama de clases:
 
